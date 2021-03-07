@@ -28,3 +28,5 @@ func main() {
 
 // gofmt uses go language rules to clean up your files.
 // your editor can be configured to automatically run gofmt on a file.
+// the -w operator will overwrite your file with the formatted version.
+// the -l operator will let you do it to an entire directory.
