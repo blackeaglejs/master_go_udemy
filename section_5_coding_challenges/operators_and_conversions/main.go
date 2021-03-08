@@ -9,6 +9,7 @@ func main() {
 	exerciseOne()
 	exerciseTwo()
 	exerciseThree()
+	exerciseFour()
 }
 
 func exerciseOne() {
@@ -50,4 +51,14 @@ func exerciseThree() {
 	a := 5
 	b := 6.2 * float64(a)
 	fmt.Println(b)
+}
+
+func exerciseFour() {
+	const sunEarthDistance float64 = 149600000
+	const speedOfLight float64 = 299792458
+
+	speedInkms := speedOfLight / float64(1000)
+
+	timeToEarth := sunEarthDistance / speedInkms
+	fmt.Printf("Time from Sun to Earth in Seconds Is %f seconds OR %f minutes\n", timeToEarth, (timeToEarth / 60))
 }
