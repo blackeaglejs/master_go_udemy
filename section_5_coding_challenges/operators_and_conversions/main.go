@@ -8,6 +8,7 @@ import (
 func main() {
 	exerciseOne()
 	exerciseTwo()
+	exerciseThree()
 }
 
 func exerciseOne() {
@@ -38,4 +39,15 @@ func exerciseTwo() {
 	fmt.Printf("s2Int value is %d, type is %T\n", s2Int, s2Int)
 	fmt.Printf("fString value is %s, type is %T\n", fString, fString)
 	fmt.Printf("s1Float64 value is %f, type is %T\n", s1Float64, s1Float64)
+}
+
+func exerciseThree() {
+	x, y := 4, 5.1
+
+	z := float64(x) * y
+	fmt.Println(z)
+
+	a := 5
+	b := 6.2 * float64(a)
+	fmt.Println(b)
 }
