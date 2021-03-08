@@ -14,4 +14,11 @@ func main() {
 	const secPerDay = 24 * 60 * 60
 	const daysYear = 365
 	fmt.Printf("Number of seconds in a year is %v\n", secPerDay*daysYear)
+
+	const x int = 10
+
+	// declaring a const of type slice int([]int) The fix is to comment this out. there isn't such a thing as an
+	// array or slice literal which means no array or slice constants.
+	// const m = []int{1: 3, 4: 5, 6: 8}
+	// _ = m
 }
