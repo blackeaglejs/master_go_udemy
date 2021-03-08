@@ -3,6 +3,11 @@ package main
 import "fmt"
 
 func main() {
+	exerciseOne()
+	exerciseTwo()
+}
+
+func exerciseOne() {
 	x, y, z := 10, 15.5, "Gophers"
 	score := []int{10, 20, 30}
 
@@ -14,4 +19,10 @@ func main() {
 	fmt.Printf("x is %v, y is %v, z is %v, score is %v\n", x, y, z, score)
 	// Print the types of y and score.
 	fmt.Printf("y is type %T, score is type %T\n", y, score)
+}
+
+func exerciseTwo() {
+	const x float64 = 1.422349587101
+
+	fmt.Printf("%.4f\n", x)
 }
