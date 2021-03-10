@@ -5,11 +5,12 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
+	"sync"
 
 	"bitbucket.org/accelecon/charybdis/services/device-grpc-api/logger"
 )
 
-func checkAndSaveBody(url string) {
+func checkAndSaveBody(url string, wg *sync.WaitGroup) {
 	resp, err := http.Get(url)
 
 	if err != nil {
@@ -29,16 +30,23 @@ func checkAndSaveBody(url string) {
 				logger.Fatal(err)
 			}
 		}
+		wg.Done()
 	}
 }
 
 func main() {
 	urls := []string{"https://golang.org", "https://www.google.com", "https://www.medium.com"}
 
+	var wg sync.WaitGroup
+
+	wg.Add(len(urls))
+
 	for _, url := range urls {
-		checkAndSaveBody(url)
+		go checkAndSaveBody(url, &wg)
 		fmt.Println(strings.Repeat("#", 20))
 	}
+
+	wg.Wait()
 
 	// This version of this program is not concurrent and will take nearly 34 minutes to execute.
 }
